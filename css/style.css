@@ -1,0 +1,107 @@
+/* Generali */
+
+/* .clearfix:after {
+   content: "";
+   display: table;
+   clear: both;
+ } */
+
+body {
+font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  position: relative;
+}
+/* fine generali */
+
+/* BACKGROUND */
+.background {
+  z-index: -1;
+}
+
+/* background green */
+.background .background-green {
+  width: 100%;
+  height: 150px;
+  background-color: #009688;
+}
+
+/* background grey */
+.background .background-grey {
+  width: 100%;
+  height: calc(100vh - 150px);
+  background-color: #d9dbd6;
+}
+
+/* WEB APP */
+.webapp {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 90%;
+  background-color: white;
+}
+
+/* webapp left */
+.webapp .webapp-left {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+  background-color: red;
+}
+
+.webapp .webapp-left > div {
+  width: 100%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.webapp .webapp-left .left-header {
+  height: 80px;
+}
+
+.webapp .webapp-left .left-notify {
+  height: 100px;
+}
+
+.webapp .webapp-left .left-search {
+  height: 60px;
+}
+
+.webapp .webapp-left .left-contacts {
+  height: calc(100% - 80px - 100px - 60px);
+  overflow: auto;
+}
+
+/* webapp right */
+.webapp .webapp-right {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  background-color: green;
+}
+
+.webapp .webapp-right > div {
+  width: 100%;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.webapp .webapp-right .right-header {
+  height: 80px;
+}
+
+.webapp .webapp-right .right-chat {
+  height: calc(100% - 80px - 100px);
+  overflow: auto;
+}
+
+.webapp .webapp-right .right-message {
+  height: 100px;
+}
