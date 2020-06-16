@@ -1,6 +1,6 @@
 /* TO-DO LIST */
-/* 2- sistemare lente su ricerca */
-/* 4- rimuovere bordi selezione caselle di testo */
+/* 1- aggiustare focusout */
+/* 2- aggiungere min altezza e larghezza */
 
 /* Generali */
 body {
@@ -19,6 +19,14 @@ li {
   padding-left: 20px;
 }
 
+p {
+  margin-bottom: 0;
+}
+
+input:focus{
+    outline: none;
+}
+
 .wrapper {
   position: relative;
 }
@@ -27,6 +35,38 @@ li {
   width: 50px;
   border-radius: 50px;
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  max-width: 60%;
+}
+
+.box .orario{
+  align-self: flex-end;
+  font-size: 12px;
+  color: rgba(0,0,0,0.3);
+}
+
+.message-green {
+  align-self: flex-end;
+  background-color: #d5f9ba;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.message-white {
+  align-self: flex-start;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
 /* fine generali */
 
 /* BACKGROUND */
@@ -119,13 +159,27 @@ li {
   background-color: #fafafa;
 }
 
-.webapp .webapp-left .left-search input {
+.webapp .webapp-left .left-search .search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+  padding: 0 15px;
+}
+
+.webapp .webapp-left .left-search .search i {
+  color: rgba(0,0,0,0.3);
+  font-size: 18px;
+}
+
+.webapp .webapp-left .left-search .search input {
   width: 100%;
   height: 35px;
   border: 0;
-  border-radius: 5px;
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 /* left contacts */
@@ -200,9 +254,25 @@ li {
 
 /* right chat */
 .webapp .webapp-right .right-chat {
+  align-items: flex-start;
   height: calc(100% - 65px - 70px);
   background-image: url(../img/mine.jpg);
   overflow: auto;
+}
+
+.webapp .webapp-right .right-chat {
+  height: calc(100% - 65px - 70px);
+  background-image: url(../img/mine.jpg);
+  overflow: auto;
+  padding: 40px 60px;
+  padding-bottom: 0;
+}
+
+.webapp .webapp-right .right-chat .chat {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* right message */
@@ -212,10 +282,11 @@ li {
   height: 70px;
   background-color: #f3eeea;
   padding: 0;
+
 }
 
 .webapp .webapp-right .right-message i {
-  font-size: 22px;
+  font-size: 25px;
   color: rgba(0,0,0,0.5);
 }
 

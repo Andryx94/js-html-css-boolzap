@@ -56,8 +56,10 @@
 
           <!-- barra ricerca -->
           <div class="left-search">
-            <i class="fas fa-search"></i>
-            <input type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat">
+            <div class="search">
+              <i class="fas fa-search"></i>
+              <input type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat">
+            </div>
           </div>
 
           <!-- contatti -->
@@ -211,6 +213,22 @@
 
           <!-- chat -->
           <div class="right-chat">
+            <div class="chat">
+
+              <div class="box message-green template hidden">
+                <p></p>
+                <span class="orario">17.44</span>
+              </div>
+              <div class="box message-green">
+                <p>Ciao come stai?</p>
+                <span class="orario">17.44</span>
+              </div>
+
+              <div class="box message-white">
+                <p>Tutto bene e te?</p>
+                <span class="orario">17.44</span>
+              </div>
+            </div>
           </div>
 
           <!-- sezione inserimento messaggi -->
@@ -224,7 +242,8 @@
             </div>
 
             <div class="microphone">
-              <i class="fas fa-microphone"></i>
+              <i id="microfono" class="fas fa-microphone"></i>
+              <i id="telegram" class="fab fa-telegram-plane hidden"></i>
             </div>
           </div>
         </div>
