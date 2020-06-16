@@ -1,17 +1,32 @@
+/* TO-DO LIST */
+/* 1- sistemare padding campana */
+/* 2- sistemare lente su ricerca */
+/* 3- sistemare spazi icone barra messaggio */
+
 /* Generali */
-
-/* .clearfix:after {
-   content: "";
-   display: table;
-   clear: both;
- } */
-
 body {
 font-family: 'Roboto', sans-serif;
 }
 
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  color: rgba(0,0,0,0.3);
+  font-size: 20px;
+  padding-left: 20px;
+}
+
 .wrapper {
   position: relative;
+}
+
+.avatar {
+  width: 50px;
+  border-radius: 50px;
 }
 /* fine generali */
 
@@ -41,67 +56,138 @@ font-family: 'Roboto', sans-serif;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
+  width: 60%;
   height: 90%;
   background-color: white;
 }
 
-/* webapp left */
+/* WEB APP LEFT */
 .webapp .webapp-left {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 30%;
   height: 100%;
-  background-color: red;
 }
 
-.webapp .webapp-left > div {
+.webapp .webapp-left > div, .webapp .webapp-right > div  { /*codice condiviso tra webapp-left e webapp-right*/
+  display: flex;
+  align-items: center;
   width: 100%;
-  background-color: yellow;
-  border: 1px solid black;
+  padding: 0 15px;
 }
 
-.webapp .webapp-left .left-header {
-  height: 80px;
+/* left header */
+.webapp .webapp-left .left-header, .webapp .webapp-right .right-header  { /*codice condiviso tra webapp-left e webapp-right*/
+  justify-content: space-between;
+  height: 65px;
+  background-color: #eaeaea;
+  border-right: 1px solid rgba(0,0,0,0.2);
 }
 
+/* left notify */
 .webapp .webapp-left .left-notify {
-  height: 100px;
+  height: 80px;
+  background-color: #8edafc;
 }
 
+.webapp .webapp-left .left-notify .bell i {
+  font-size: 25px;
+  color: #8edafc;
+  background-color: white;
+  padding: 12px;
+  border-radius: 50px;
+}
+
+.webapp .webapp-left .left-notify .bell-text, .webapp .webapp-right .right-header .avatar-zone .avatar-text {/*codice condiviso tra webapp-left e webapp-right*/
+  padding-left: 10px;
+}
+
+.webapp .webapp-left .left-notify .bell-text p  {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.webapp .webapp-left .left-notify .bell-text a  {
+  text-decoration: underline;
+}
+
+/* left search */
 .webapp .webapp-left .left-search {
   height: 60px;
+  background-color: #fafafa;
 }
 
+.webapp .webapp-left .left-search input {
+  width: 100%;
+  height: 35px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+}
+
+/* left contacts */
 .webapp .webapp-left .left-contacts {
   height: calc(100% - 80px - 100px - 60px);
   overflow: auto;
 }
 
-/* webapp right */
+/* WEB APP RIGHT */
 .webapp .webapp-right {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 70%;
   height: 100%;
-  background-color: green;
 }
 
-.webapp .webapp-right > div {
-  width: 100%;
-  background-color: yellow;
-  border: 1px solid black;
-}
-
+/* right header */
 .webapp .webapp-right .right-header {
-  height: 80px;
+  border-right: none;
 }
 
+.webapp .webapp-right .right-header .avatar-zone {
+  display: flex;
+}
+
+.webapp .webapp-right .right-header .avatar-zone p {
+  margin: 0;
+}
+
+.webapp .webapp-right .right-header .avatar-zone p:first-child {
+  font-weight: 600;
+}
+
+.webapp .webapp-right .right-header .avatar-zone .avatar-text {
+  padding-top: 5px;
+}
+
+/* right chat */
 .webapp .webapp-right .right-chat {
-  height: calc(100% - 80px - 100px);
+  height: calc(100% - 65px - 70px);
+  background-image: url(../img/mine.jpg);
   overflow: auto;
 }
 
+/* right message */
 .webapp .webapp-right .right-message {
-  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #f3eeea;
+}
+
+.webapp .webapp-right .right-message i {
+  font-size: 20px;
+  color: rgba(0,0,0,0.5);
+}
+
+.webapp .webapp-right .right-message .text-input {
+  flex-grow: 4;
+  text-align: center;
+}
+
+.webapp .webapp-right .right-message .text-input input {
+  width: 90%;
+  height: 50px;
+  border: 0;
+  border-radius: 5px;
 }
