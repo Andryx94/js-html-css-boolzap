@@ -1,6 +1,7 @@
 /* TO-DO LIST */
 /* 1- aggiustare focusout */
-/* 2- aggiungere min altezza e larghezza */
+/* 2- i nomi delle persone diventano h3 */
+/* 3- orario solo dal secondo in poi risponditore */
 
 /* Generali */
 body {
@@ -36,7 +37,14 @@ input:focus{
   border-radius: 50px;
 }
 
+.hidden {
+  display: none;
+}
+
+/* BOX MESSAGGI */
+/* messaggi */
 .box {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -63,8 +71,16 @@ input:focus{
   padding: 10px;
 }
 
-.hidden {
-  display: none;
+/* dropdown */
+.dropdown {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  right: -90%;
+  width: 150px;
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 /* fine generali */
@@ -96,7 +112,9 @@ input:focus{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
+  min-width: 900px;
   height: 90%;
+  min-height: 300px;
   background-color: white;
 }
 
@@ -199,16 +217,16 @@ input:focus{
   padding: 10px 15px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   color: rgba(0,0,0,0.3);
-
 }
 
 .webapp .webapp-left .left-contacts .contatto p {
   margin-bottom: 0;
 }
 
-.webapp .webapp-left .left-contacts .contatto #nome-utente {
+.webapp .webapp-left .left-contacts .contatto .nome-utente {
   color: black;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .webapp .webapp-left .left-contacts .contatto .time {
@@ -257,13 +275,13 @@ input:focus{
   align-items: flex-start;
   height: calc(100% - 65px - 70px);
   background-image: url(../img/mine.jpg);
-  overflow: auto;
 }
 
 .webapp .webapp-right .right-chat {
   height: calc(100% - 65px - 70px);
   background-image: url(../img/mine.jpg);
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 40px 60px;
   padding-bottom: 0;
 }
@@ -275,6 +293,14 @@ input:focus{
   width: 100%;
 }
 
+.webapp .webapp-right .right-chat .chat i {
+  font-size: 10px;
+  color: rgba(0,0,0,0.5);
+}
+
+.webapp .webapp-right .right-chat .chat p {
+  word-break: break-word;
+}
 /* right message */
 .webapp .webapp-right .right-message {
   display: flex;

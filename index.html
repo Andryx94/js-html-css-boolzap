@@ -30,7 +30,7 @@
           <!-- header contatti -->
           <div class="left-header">
             <div class="avatar">
-              <img src="img\avatar_io.jpg"  class="avatar" alt="">
+              <img src="img/avatar_io.jpg"  class="avatar" alt="">
             </div>
 
             <div class="option-list">
@@ -58,20 +58,20 @@
           <div class="left-search">
             <div class="search">
               <i class="fas fa-search"></i>
-              <input type="text" name="" value="" placeholder=" Cerca o inizia una nuova chat">
+              <input type="text" name="search" value="" placeholder=" Cerca o inizia una nuova chat">
             </div>
           </div>
 
           <!-- contatti -->
           <div class="left-contacts">
             <!-- Michele -->
-            <div class="contatto">
+            <div data-user="0" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_1.jpg"  class="avatar" alt="">
+                <img src="img/avatar_1.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Michele</p>
+                <p class="nome-utente">michele</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -80,13 +80,13 @@
               </div>
             </div>
             <!-- Fabio -->
-            <div class="contatto">
+            <div data-user="1" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_2.jpg"  class="avatar" alt="">
+                <img src="img/avatar_2.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Fabio</p>
+                <p class="nome-utente">fabio</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -95,13 +95,13 @@
               </div>
             </div>
             <!-- Samuele -->
-            <div class="contatto">
+            <div data-user="2" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_3.jpg"  class="avatar" alt="">
+                <img src="img/avatar_3.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Samuele</p>
+                <p class="nome-utente">samuele</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -110,13 +110,13 @@
               </div>
             </div>
             <!-- Alessandro B. -->
-            <div class="contatto">
+            <div data-user="3" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_4.jpg"  class="avatar" alt="">
+                <img src="img/avatar_4.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Alessandro B.</p>
+                <p class="nome-utente">alessandro B.</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -125,13 +125,13 @@
               </div>
             </div>
             <!-- Alessandro L. -->
-            <div class="contatto">
+            <div data-user="4" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_5.jpg"  class="avatar" alt="">
+                <img src="img/avatar_5.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Alessandro L.</p>
+                <p class="nome-utente">alessandro L.</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -140,13 +140,13 @@
               </div>
             </div>
             <!-- Claudia -->
-            <div class="contatto">
+            <div data-user="5" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_6.jpg"  class="avatar" alt="">
+                <img src="img/avatar_6.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Claudia</p>
+                <p class="nome-utente">claudia</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -155,13 +155,13 @@
               </div>
             </div>
             <!-- Davide -->
-            <div class="contatto">
+            <div data-user="6" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_7.jpg"  class="avatar" alt="">
+                <img src="img/avatar_7.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Davide</p>
+                <p class="nome-utente">davide</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -170,13 +170,13 @@
               </div>
             </div>
             <!-- Federico -->
-            <div class="contatto">
+            <div data-user="7" class="contatto">
               <div class="avatar">
-                <img src="img\avatar_8.jpg"  class="avatar" alt="">
+                <img src="img/avatar_8.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
-                <p id="nome-utente">Federico</p>
+                <p class="nome-utente">federico</p>
                 <p>Non poteva essere altrimenti</p>
               </div>
 
@@ -193,7 +193,7 @@
           <div class="right-header">
             <div class="avatar-zone">
               <div class="avatar">
-                <img src="img\avatar_1.jpg"  class="avatar" alt="">
+                <img src="img/avatar_1.jpg"  class="avatar" alt="">
               </div>
 
               <div class="avatar-text">
@@ -213,22 +213,62 @@
 
           <!-- chat -->
           <div class="right-chat">
-            <div class="chat">
+            <!-- chat Michele -->
+            <div data-chat="0" class="chat active">
+              <div class="box message-green hidden">
+                <p><span></span> <i class="fas fa-chevron-down"></i> <i class="fas fa-chevron-up hidden"></i></p>
+                <p class="orario"></p>
 
-              <div class="box message-green template hidden">
-                <p></p>
-                <span class="orario">17.44</span>
+                <!-- <div class="dropdown">
+                  <p>Info Messaggio</p>
+                  <p class="delete">Cancella Messaggio</p>
+                </div> -->
               </div>
+
+              <div class="box message-white hidden">
+                <p><span>ok!</span> <i class="fas fa-chevron-down"></i> <i class="fas fa-chevron-down hidden"></i></p>
+                <p class="orario"></p>
+
+                <!-- <div class="dropdown">
+                  <p>Info Messaggio</p>
+                  <p class="delete">Cancella Messaggio</p>
+                </div> -->
+              </div>
+
               <div class="box message-green">
-                <p>Ciao come stai?</p>
+                <p><span>Ciao come stai?</span> <i class="fas fa-chevron-down"></i> <i class="fas fa-chevron-up hidden"></i></p>
                 <span class="orario">17.44</span>
+
+                <!-- <div class="dropdown">
+                  <p>Info Messaggio</p>
+                  <p class="delete">Cancella Messaggio</p>
+                </div> -->
               </div>
 
               <div class="box message-white">
-                <p>Tutto bene e te?</p>
+                <p><span>Tutto bene e te?</span> <i class="fas fa-chevron-down"></i> <i class="fas fa-chevron-up hidden"></i></p>
                 <span class="orario">17.44</span>
+
+                <!-- <div class="dropdown">
+                  <p>Info Messaggio</p>
+                  <p class="delete">Cancella Messaggio</p>
+                </div> -->
               </div>
             </div>
+            <!-- chat Fabio -->
+
+            <!-- chat Samuele -->
+
+            <!-- chat Alessandro B. -->
+
+            <!-- chat Alessandro L. -->
+
+            <!-- chat Claudia -->
+
+            <!-- chat Davide -->
+
+            <!-- chat Federico -->
+
           </div>
 
           <!-- sezione inserimento messaggi -->
@@ -238,7 +278,7 @@
             </div>
 
             <div class="text-input">
-              <input type="text" name="" value="" placeholder=" Scrivi un messaggio">
+              <input type="text" name="text" value="" placeholder=" Scrivi un messaggio">
             </div>
 
             <div class="microphone">
