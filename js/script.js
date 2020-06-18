@@ -48,7 +48,11 @@ $(document).ready(
 
     //avvio funzione a click icona arrow
     $(document).on("click", ".arrow", function() {
-      $(this).siblings(".dropdown").toggleClass("hidden");
+      $(this).siblings(".dropdown").removeClass("hidden");
+    });
+
+    $(document).on("mouseleave", ".box", function() {
+      $(this).find(".dropdown").addClass("hidden");
     });
 
     //avvio funzione a click cancella messaggio in dropdown
@@ -60,6 +64,14 @@ $(document).ready(
     contatto.on("click", function() {
     var attrUtente = $(this).attr("data-user");
     var attrChat = '.chat[data-chat="' + attrUtente + '"]';
+    var avatarCorrente = $(this).find(".avatar").html();
+    var avatarNuovo = $(".right-header .avatar-zone .avatar");
+    var nomeAvatarCorrente = $(this).find(".avatar-text h3").html();
+    var nomeAvatarNuovo = $(".right-header .avatar-zone .avatar-text h3");
+
+    //sostituisce avatar e nome utente correnti con quelli nuovi selezionati
+    avatarNuovo.html(avatarCorrente);
+    nomeAvatarNuovo.html(nomeAvatarCorrente);
 
     //aggiungo classe active all'elemento selezionato rimuovendola agli altri fratelli
     $(this).addClass("active");
@@ -71,6 +83,8 @@ $(document).ready(
     $(attrChat).siblings().addClass("hidden");
     $(attrChat).siblings().removeClass("mostra");
     });
+
+
   }
 );
 
