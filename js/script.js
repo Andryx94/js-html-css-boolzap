@@ -5,6 +5,9 @@ $(document).ready(
     var telegram = $("#telegram");
     var nomeUtente = $(".nome-utente");
     var ricerca = $(".left-search .search input");
+    var arrow = $(".right-chat .chat .arrow");
+    var dropdown = $(".right-chat .chat .dropdown");
+    var deleteDropdown = $(".right-chat .chat .dropdown .delete");
 
     //avvio funzione a focus su casella input messaggio
     inputMessaggio.focus(function() {
@@ -12,10 +15,12 @@ $(document).ready(
       telegram.toggleClass("hidden");
     });
 
-    // inputMessaggio.focusout(function() {
-    //   microfono.toggleClass("hidden");
-    //   telegram.toggleClass("hidden");
-    // });
+    inputMessaggio.focusout(function() {
+      setTimeout(function() {
+        microfono.toggleClass("hidden");
+        telegram.toggleClass("hidden");
+      }, 100);
+    });
 
     //avvio funzione a click icona telegram
     telegram.click(function() {
@@ -42,6 +47,16 @@ $(document).ready(
         }
       });
     });
+
+    //avvio funzione a click icona arrow
+    arrow.on("click", function() {
+      $(this).siblings(".dropdown").toggleClass("hidden");
+    });
+
+    //avvio funzione a click cancella messaggio in dropdown
+    deleteDropdown.on("click", function() {
+      $(this).parents(".box").remove();
+    })
   }
 );
 
@@ -52,7 +67,6 @@ function invioMessaggio(inputMessaggio) {
     var input = $(".right-chat .chat .message-green.hidden span").text(inputMessaggio.val());
     var orario= $(".right-chat .chat .message-green.hidden .orario").text(oraAttuale());
     var clone = $(".right-chat .chat .message-green.hidden").clone();
-
     clone.removeClass("hidden");
 
     //appendo il clone alla chat
@@ -69,8 +83,8 @@ function invioMessaggio(inputMessaggio) {
 //FUNZIONE risposta automatica messaggio
 function rispostaMessaggio(){
   // crea un clone a cui rimuove la classe hidden
-  var clone = $(".right-chat .chat .message-white.hidden").clone();
   var orario= $(".right-chat .chat .message-white.hidden .orario").text(oraAttuale());
+  var clone = $(".right-chat .chat .message-white.hidden").clone();
   clone.removeClass("hidden");
 
   ////appendo il clone alla chat

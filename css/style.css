@@ -1,7 +1,5 @@
 /* TO-DO LIST */
-/* 1- aggiustare focusout */
-/* 2- i nomi delle persone diventano h3 */
-/* 3- orario solo dal secondo in poi risponditore */
+/* 1-sistemare messaggi e dropdown */
 
 /* Generali */
 body {
@@ -22,6 +20,12 @@ li {
 
 p {
   margin-bottom: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 input:focus{
@@ -47,7 +51,7 @@ input:focus{
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   max-width: 60%;
 }
 
@@ -71,6 +75,16 @@ input:focus{
   padding: 10px;
 }
 
+/* arrow */
+.box:hover > .arrow {
+  opacity: 1;
+}
+
+.arrow {
+  opacity: 0;
+  cursor: pointer;
+}
+
 /* dropdown */
 .dropdown {
   z-index: 2;
@@ -78,9 +92,17 @@ input:focus{
   top: 50%;
   right: -90%;
   width: 150px;
-  background-color: lightgrey;
+  background-color: #eaeaea;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px 10px;
+}
+
+.dropdown p{
+  cursor: pointer;
+}
+
+.dropdown p:first-child{
+  padding-bottom: 20px;
 }
 
 /* fine generali */
@@ -158,7 +180,7 @@ input:focus{
   border-radius: 50px;
 }
 
-.webapp .webapp-left .left-notify .bell-text, .webapp .webapp-right .right-header .avatar-zone .avatar-text {/*codice condiviso tra webapp-left e webapp-right*/
+.webapp .webapp-left .left-notify .bell-text, .webapp .webapp-right .right-header .avatar-zone .avatar-text { /*codice condiviso tra webapp-left e webapp-right*/
   padding-left: 10px;
 }
 
@@ -219,8 +241,24 @@ input:focus{
   color: rgba(0,0,0,0.3);
 }
 
+.webapp .webapp-left .left-contacts .contatto h3 {
+  font-size: 14px;
+}
+
 .webapp .webapp-left .left-contacts .contatto p {
-  margin-bottom: 0;
+  line-height: 16px;
+}
+
+.webapp .webapp-left .left-contacts .contatto .avatar-zone, .webapp .webapp-right .right-header .avatar-zone { /*codice condiviso tra webapp-left e webapp-right*/
+  display: flex;
+}
+
+.webapp .webapp-left .left-contacts .contatto .avatar-zone .avatar-text, .webapp .webapp-right .right-header .avatar-zone .avatar-text { /*codice condiviso tra webapp-left e webapp-right*/
+  align-self: center;
+}
+
+.webapp .webapp-left .left-contacts .contatto .avatar-text {
+  padding-left: 10px;
 }
 
 .webapp .webapp-left .left-contacts .contatto .nome-utente {
@@ -231,9 +269,6 @@ input:focus{
 
 .webapp .webapp-left .left-contacts .contatto .time {
   text-align: right;
-}
-
-.webapp .webapp-left .left-contacts .contatto .time p {
   font-size: 12px;
 }
 
@@ -250,23 +285,7 @@ input:focus{
   border-right: none;
 }
 
-.webapp .webapp-right .right-header .avatar-zone {
-  display: flex;
-}
-
-.webapp .webapp-right .right-header .avatar-zone p {
-  margin: 0;
-}
-
-.webapp .webapp-right .right-header .avatar-zone p:first-child {
-  font-weight: 600;
-}
-
-.webapp .webapp-right .right-header .avatar-zone .avatar-text {
-  padding-top: 5px;
-}
-
-.webapp .webapp-right .right-header .avatar-zone .avatar-text p:last-child {
+.webapp .webapp-right .right-header .avatar-zone .avatar-text p {
   color: rgba(0,0,0,0.5);
 }
 
