@@ -5,9 +5,7 @@ $(document).ready(
     var telegram = $("#telegram");
     var nomeUtente = $(".nome-utente");
     var ricerca = $(".left-search .search input");
-    var arrow = $(".right-chat .chat .arrow");
-    var dropdown = $(".right-chat .chat .dropdown");
-    var deleteDropdown = $(".right-chat .chat .dropdown .delete");
+    var contatto = $(".contatto");
 
     //avvio funzione a focus su casella input messaggio
     inputMessaggio.focus(function() {
@@ -49,14 +47,30 @@ $(document).ready(
     });
 
     //avvio funzione a click icona arrow
-    arrow.on("click", function() {
+    $(document).on("click", ".arrow", function() {
       $(this).siblings(".dropdown").toggleClass("hidden");
     });
 
     //avvio funzione a click cancella messaggio in dropdown
-    deleteDropdown.on("click", function() {
+    $(document).on("click", ".delete", function() {
       $(this).parents(".box").remove();
-    })
+    });
+
+    //avvio funzione a click contatto
+    contatto.on("click", function() {
+    var attrUtente = $(this).attr("data-user");
+    var attrChat = '.chat[data-chat="' + attrUtente + '"]';
+
+    //aggiungo classe active all'elemento selezionato rimuovendola agli altri fratelli
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+
+    //rimuovo classe hodden all'elemento selezionato aggiungendola agli altri fratelli
+    $(attrChat).removeClass("hidden");
+    $(attrChat).addClass("mostra");
+    $(attrChat).siblings().addClass("hidden");
+    $(attrChat).siblings().removeClass("mostra");
+    });
   }
 );
 
@@ -64,13 +78,13 @@ $(document).ready(
 function invioMessaggio(inputMessaggio) {
   if (inputMessaggio.val() != "") {
     //inserisce l'input nel template e crea un clone a cui rimuove la classe hidden
-    var input = $(".right-chat .chat .message-green.hidden span").text(inputMessaggio.val());
+    var input = $(".right-chat .chat .message-green.hidden .testo-utente").text(inputMessaggio.val());
     var orario= $(".right-chat .chat .message-green.hidden .orario").text(oraAttuale());
-    var clone = $(".right-chat .chat .message-green.hidden").clone();
+    var clone = $(".right-chat .mostra .message-green.hidden").clone();
     clone.removeClass("hidden");
 
     //appendo il clone alla chat
-    $(".right-chat .chat").append(clone);
+    $(".right-chat .mostra").append(clone);
 
     //scrolla la chat all'ultimo messaggio
     $(".right-chat").scrollTop($(".right-chat").height());
@@ -84,11 +98,11 @@ function invioMessaggio(inputMessaggio) {
 function rispostaMessaggio(){
   // crea un clone a cui rimuove la classe hidden
   var orario= $(".right-chat .chat .message-white.hidden .orario").text(oraAttuale());
-  var clone = $(".right-chat .chat .message-white.hidden").clone();
+  var clone = $(".right-chat .mostra .message-white.hidden").clone();
   clone.removeClass("hidden");
 
   ////appendo il clone alla chat
-  $(".right-chat .chat").append(clone);
+  $(".right-chat .mostra").append(clone);
 
   //scrolla la chat all'ultimo messaggio
   $(".right-chat").scrollTop($(".right-chat").height());

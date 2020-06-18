@@ -45,14 +45,32 @@ input:focus{
   display: none;
 }
 
+.active {
+  background-color: rgb(234, 234, 234);
+}
+
 /* BOX MESSAGGI */
 /* messaggi */
 .box {
-  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 10px;
   max-width: 60%;
+}
+
+.box > div:last-child{
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  width: 30px;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+}
+
+.box > div:last-child i{
+  padding-bottom: 10px;
 }
 
 .box .orario{
@@ -76,21 +94,19 @@ input:focus{
 }
 
 /* arrow */
-.box:hover > .arrow {
+/* .box:hover > .arrow {
   opacity: 1;
-}
+} */
 
 .arrow {
-  opacity: 0;
+  /* opacity: 0; */
   cursor: pointer;
 }
 
 /* dropdown */
 .dropdown {
-  z-index: 2;
   position: absolute;
   top: 50%;
-  right: -90%;
   width: 150px;
   background-color: #eaeaea;
   border-radius: 20px;
