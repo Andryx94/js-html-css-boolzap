@@ -51,6 +51,7 @@ $(document).ready(
       $(this).siblings(".dropdown").removeClass("hidden");
     });
 
+    //avvio funzione ad uscita mouse da messaggio
     $(document).on("mouseleave", ".box", function() {
       $(this).find(".dropdown").addClass("hidden");
     });
@@ -83,8 +84,6 @@ $(document).ready(
     $(attrChat).siblings().addClass("hidden");
     $(attrChat).siblings().removeClass("mostra");
     });
-
-
   }
 );
 
@@ -101,7 +100,7 @@ function invioMessaggio(inputMessaggio) {
     $(".right-chat .mostra").append(clone);
 
     //scrolla la chat all'ultimo messaggio
-    $(".right-chat").scrollTop($(".right-chat").height());
+    $(".right-chat").scrollTop($(".right-chat").prop("scrollHeight"));
 
     //avvia la funzione di risposta automatica
     setTimeout(rispostaMessaggio, 1000);
@@ -119,7 +118,7 @@ function rispostaMessaggio(){
   $(".right-chat .mostra").append(clone);
 
   //scrolla la chat all'ultimo messaggio
-  $(".right-chat").scrollTop($(".right-chat").height());
+  $(".right-chat").scrollTop($(".right-chat").prop("scrollHeight"));
 };
 
 //FUNZIONE orario attuale

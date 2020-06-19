@@ -29,7 +29,7 @@ h3 {
 }
 
 input:focus{
-    outline: none;
+  outline: none;
 }
 
 .wrapper {
@@ -123,7 +123,6 @@ input:focus{
 .dropdown p:first-child{
   padding-bottom: 20px;
 }
-
 /* fine generali */
 
 /* BACKGROUND */
@@ -328,8 +327,9 @@ input:focus{
 }
 
 .webapp .webapp-right .right-chat .chat p {
-  word-break: break-word;
+  word-break:break-all;
 }
+
 /* right message */
 .webapp .webapp-right .right-message {
   display: flex;
